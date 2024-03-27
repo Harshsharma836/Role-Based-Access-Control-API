@@ -1,0 +1,135 @@
+openapi: 3.0.0
+info:
+  title: Enhanced Authentication API
+  description: API documentation for the enhanced authentication system.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /user/register:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRegistration'
+            example:
+              username: example_user
+              email: example@example.com
+              password: password123
+      responses:
+        '201':
+          description: User registered successfully
+        '400':
+          description: Bad request
+  /user/login:
+    post:
+      summary: Login user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserLogin'
+            example:
+              email: example@example.com
+              password: password123
+      responses:
+        '200':
+          description: User logged in successfully
+        '401':
+          description: Unauthorized
+  /user/profile:
+    put:
+      summary: Update user profile
+      security:
+        - JWT: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProfileUpdate'
+            example:
+              username: updated_user
+              password: current_password
+              newPassword: new_password
+              name: John Doe
+              bio: Some bio
+              phone: 1234567890
+              photo: http://example.com/photo.jpg
+              isPublic: true
+      responses:
+        '200':
+          description: User profile updated successfully
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: User not found
+        '500':
+          description: Internal server error
+  /user/signout:
+    post:
+      summary: Sign out user
+      security:
+        - JWT: []
+      responses:
+        '200':
+          description: User signed out successfully
+        '401':
+          description: Unauthorized
+  /admin/dashboard:
+    get:
+      summary: Get all users (admin only)
+      security:
+        - JWT: []
+      responses:
+        '200':
+          description: Users retrieved successfully
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    UserRegistration:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+    UserLogin:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+    UserProfileUpdate:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        newPassword:
+          type: string
+        name:
+          type: string
+        bio:
+          type: string
+        phone:
+          type: string
+        photo:
+          type: string
+        isPublic:
+          type: boolean
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
