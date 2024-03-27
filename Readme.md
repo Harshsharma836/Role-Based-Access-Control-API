@@ -1,5 +1,4 @@
 
-```markdown
 # Role-Based Access Control Manager
 
 ## Overview
@@ -66,13 +65,12 @@ This repository contains the backend API documentation and implementation for a 
 - Unit tests are written using a testing framework (e.g., Mocha).
 - Run tests using `npm run test`.
 
-## Contributing
+## MongoDB Collection View
 
-Contributions are welcome! Please fork the repository and create a pull request with your changes. For major changes, please open an issue first to discuss what you would like to change.
+![Screenshot (198)](https://github.com/Harshsharma836/Role-Based-Access-Control-API/assets/70514943/3b889794-6863-47a4-8a01-8eeb3e174ddc)
 
-## License
+## API Documentation
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
+You can find the API documentation below:
 
-Feel free to copy and paste this content into your README.md file. If you need further assistance or modifications, just let me know!
+https://node-role-based-server.onrender.com/api-docs/
