@@ -1,35 +1,29 @@
-Sure, here's the entire README.md file with all the information provided in a single file:
 
 ```markdown
-# Enhanced Authentication API
+# Role-Based Access Control Manager
 
 ## Overview
 
-This repository contains the backend API documentation and implementation for an enhanced authentication system. The API allows users to register, log in, manage their profiles, and sets their profiles as public or private. Admin users have access to both public and private user profiles, while normal users can only access public profiles. Key technologies used include Node.js for the backend, JWT authentication, and MongoDB as the database.
+This repository contains the backend API documentation and implementation for a Role-Based Access Control (RBAC) manager. The API allows users to manage roles, permissions, and user access to resources based on their roles. Key technologies used include Node.js for the backend, JWT authentication, and MongoDB as the database.
 
-## User Stories
+## Features
 
-- As a user, I can register a new account.
-- As a user, I can log in.
-- As a user, I can log in or register with at least one of the following services: Google, Facebook, Twitter, or GitHub.
-- As a user, I can sign out.
-- As a user, I can see my profile details.
-- As a user, I can edit my details including: photo, name, bio, phone, email, and password.
-- As a user, I can upload a new photo or provide an image URL.
-- As a user, I can choose to make my profile public or private.
-- As an admin user, I can see both public and private user profiles.
-- As a normal user, I can only see public user profiles.
+- Role management: Create, update, and delete roles
+- Permission management: Assign permissions to roles
+- User management: Create, update, and delete users
+- Access control: Control user access to resources based on roles and permissions
+- API endpoints for managing roles, permissions, and users
 
 ## Setup Instructions
 
 1. Clone the Repository:
    ```sh
-   git clone https://github.com/your_username/enhanced-authentication-api.git
+   git clone https://github.com/Harshsharma836/Role-Based-Access-Control-Manager.git
    ```
 
 2. **Change directory to the project folder:**
    ```sh
-   cd enhanced-authentication-api
+   cd Role-Based-Access-Control-Manager
    ```
 
 3. **Install Dependencies:** 
@@ -63,15 +57,9 @@ This repository contains the backend API documentation and implementation for an
 - JWT is used for authentication. Upon successful login, a JWT is generated and returned in the response.
 - Include JWT in the `Authorization` header as `Bearer YOUR_JWT_TOKEN` for accessing protected routes.
 
-## Role-Based Access Control (RBAC)
-
-- Two roles are defined: `user` and `admin`.
-- Admin users have access to all user profiles.
-- Normal users can only access public user profiles.
-
 ## Error Handling
 
-- Proper error handling is implemented for various scenarios like bad requests, unauthorized access, user not found, and internal server errors.
+- Proper error handling is implemented for various scenarios like bad requests, unauthorized access, resource not found, and internal server errors.
 
 ## Testing
 
@@ -82,17 +70,9 @@ This repository contains the backend API documentation and implementation for an
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes. For major changes, please open an issue first to discuss what you would like to change.
 
-## Hosting (Optional)
-
-You can host the API on a platform like Heroku to make it accessible online. Provide clear instructions on how to access the hosted API.
-
-## API Documentation (Swagger)
-
-You can utilize Swagger to create an API playground for testing the API endpoints interactively. Instructions on how to access the Swagger documentation and utilize the playground can be found [here](https://your-api-host/swagger-docs).
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
 
-You can copy and paste this content into your README.md file. Let me know if you need any further assistance!
+Feel free to copy and paste this content into your README.md file. If you need further assistance or modifications, just let me know!
